@@ -1,3 +1,12 @@
+// Prevent browser from restoring scroll position on reload
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
 // Scroll Reveal Animation Functionality
 function reveal() {
     var reveals = document.querySelectorAll('.reveal');
