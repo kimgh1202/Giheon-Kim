@@ -419,9 +419,21 @@ p {
 
 .nav-card {
     text-decoration: none;
-    color: inherit;
+    color: var(--text-primary-light);
     display: block;
     cursor: pointer;
+}
+
+.nav-card:visited, .nav-card:active {
+    color: var(--text-primary-light);
+}
+
+.sec-dark .nav-card {
+    color: var(--text-primary-dark);
+}
+
+.sec-dark .nav-card:visited, .sec-dark .nav-card:active {
+    color: var(--text-primary-dark);
 }
 
 .nav-card:hover h3 {
