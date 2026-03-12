@@ -19,7 +19,7 @@
 
     <nav id="navbar" class="glass-nav">
         <div class="nav-content">
-            <a href="index.html" class="logo">&larr; Back to Portfolio</a>
+            <a href="index.html#about" onclick="if(document.referrer.includes(window.location.hostname)){ history.back(); return false; }" class="logo">&larr; Back to Portfolio</a>
         </div>
     </nav>
 
