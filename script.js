@@ -22,10 +22,10 @@ function updateScrollAnim() {
     // Zoom Logic
     const title = document.getElementById('zoom-title');
     if (title) {
-        if (scrollY < window.innerHeight * 2.5) {
-            // Slower, more elegant scaling factor
+        if (scrollY < window.innerHeight * 2.7) { // Adjusted for 250vh sticky-wrap
+            // Balanced zooming and fade out
             const zoomFactor = 1 + (scrollY / 500); 
-            const opacityFactor = 1 - (scrollY / (window.innerHeight * 1.0)); 
+            const opacityFactor = 1 - (scrollY / (window.innerHeight * 1.2)); 
             
             // translateZ(0) forces GPU hardware acceleration for buttery smoothness
             title.style.transform = `scale(${zoomFactor}) translateZ(0)`;
