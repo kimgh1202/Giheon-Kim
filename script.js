@@ -5,7 +5,8 @@ function reveal() {
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 100;
+        // 요소가 화면의 약 1/3 ~ 가운데 부근에 도달했을 때 애니메이션 시작 (이전에는 100px)
+        var elementVisible = windowHeight / 3.5; 
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add('active');
