@@ -362,6 +362,7 @@ p {
 #publications {
     scroll-margin-top: 0;
     padding-bottom: 1rem;
+    margin-top: 30px;
     /* Further reduced bottom size to hide black box */
 }
 
