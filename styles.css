@@ -371,12 +371,12 @@ p {
 #publications::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 75px;
     left: 0;
     right: 0;
     bottom: -30px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 150px, rgba(0, 0, 0, 0.85) 100%);
-    /* Smooth gradient transition to black */
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Black background */
     z-index: -1;
 }
 
@@ -484,6 +484,7 @@ p {
     gap: 3rem;
     text-align: left;
     max-width: 800px;
+    min-height: 300px; /* Force minimum height to make the card taller */
     margin: 0 auto;
 }
 
