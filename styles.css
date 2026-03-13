@@ -302,7 +302,7 @@ p {
 }
 
 #about {
-    scroll-margin-top: calc(25vh + 80px); /* Adjust to center bio-card without subtitle */
+    scroll-margin-top: calc(25vh + 70px); /* Adjusted to move the box 10px up */
 }
 
 #publications {
