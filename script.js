@@ -3,6 +3,9 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+// Immediate scroll to top
+window.scrollTo(0, 0);
+
 // Ensure the page always loads at the top, overriding browser behavior
 window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
@@ -10,9 +13,10 @@ window.addEventListener('beforeunload', function() {
 
 // Double check forced scroll on load to fix Safari/Chrome quirks
 window.onload = function() {
+    window.scrollTo(0, 0);
     setTimeout(function() {
         window.scrollTo(0, 0);
-    }, 10);
+    }, 150);
 };
 
 // Scroll Reveal Animation Functionality
