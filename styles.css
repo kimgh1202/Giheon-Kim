@@ -305,6 +305,10 @@ p {
     scroll-margin-top: 15vh; /* Larger offset to center the bio card on scroll */
 }
 
+#publications {
+    scroll-margin-top: 0; /* Align black background exactly to the top of the screen */
+}
+
 .sec-light {
     background-color: transparent; /* allow liquid background to show through */
 }
