@@ -302,7 +302,7 @@ p {
 }
 
 #research {
-    scroll-margin-top: 90px; /* 10px higher scroll offset */
+    scroll-margin-top: 25vh; /* Push section down so the cards sit in the center of the screen */
 }
 
 #about {
