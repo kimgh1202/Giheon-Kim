@@ -302,16 +302,16 @@ p {
 }
 
 #about {
-    scroll-margin-top: 25vh; /* Larger offset to center the bio card on scroll */
+    scroll-margin-top: calc(25vh + 40px); /* 1cm higher scroll offset */
 }
 
 #publications {
-    scroll-margin-top: 0; /* Align black background exactly to the top of the screen */
-    padding-bottom: 3rem; /* Reduce the bottom size of the black box */
+    scroll-margin-top: 0;
+    padding-bottom: 1rem; /* Further reduced bottom size to hide black box */
 }
 
 #conferences {
-    scroll-margin-top: 0; /* Prevent the black box from showing at the top */
+    scroll-margin-top: -40px; /* 1cm lower scroll offset */
 }
 
 .sec-light {
