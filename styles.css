@@ -302,7 +302,7 @@ p {
 }
 
 #about {
-    scroll-margin-top: calc(25vh + 40px); /* 1cm higher scroll offset */
+    scroll-margin-top: calc(25vh + 30px); /* 10px lower scroll offset */
 }
 
 #publications {
@@ -311,7 +311,7 @@ p {
 }
 
 #conferences {
-    scroll-margin-top: -40px; /* 1cm lower scroll offset */
+    scroll-margin-top: -20px; /* 20px higher scroll offset */
 }
 
 .sec-light {
