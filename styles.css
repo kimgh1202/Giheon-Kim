@@ -502,6 +502,17 @@ p {
 .pub-item {
     display: flex;
     gap: 2rem;
+    padding: 1.5rem 2.5rem;
+}
+
+.pub-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.pub-item p {
+    margin-bottom: 0.25rem;
 }
 
 .pub-year {
