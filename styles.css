@@ -319,7 +319,7 @@ p {
 
 /* Hero Section (Sticky Wrapper for Zoom) */
 .sticky-wrap {
-    height: 250vh; /* Smooth and balanced transition */
+    height: 130vh; /* Smooth and balanced transition */
     position: relative;
     padding: 0;
 }

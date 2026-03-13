@@ -41,9 +41,9 @@ function updateScrollAnim() {
     const title = document.getElementById('zoom-title');
     if (title) {
         const isMobile = window.innerWidth <= 768;
-        const scrollLimit = isMobile ? window.innerHeight * 1.2 : window.innerHeight * 2.7;
+        const scrollLimit = isMobile ? window.innerHeight * 1.2 : window.innerHeight * 1.5;
         const zoomDivisor = isMobile ? 300 : 500;
-        const opacityDivisor = isMobile ? window.innerHeight * 0.6 : window.innerHeight * 1.2;
+        const opacityDivisor = isMobile ? window.innerHeight * 0.6 : window.innerHeight * 0.8;
 
         if (scrollY < scrollLimit) { 
             // Balanced zooming and fade out based on device
