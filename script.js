@@ -31,6 +31,9 @@ function reveal() {
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add('active');
+        } else {
+            // Remove active class when scrolled out of view, so it replays
+            reveals[i].classList.remove('active');
         }
     }
 }

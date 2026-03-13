@@ -532,7 +532,7 @@ p {
 
 /* Grid for Research */
 #research .container {
-    transform: translateY(-10px);
+    margin-top: -10px;
 }
 
 .grid-container {
