@@ -362,8 +362,20 @@ p {
 #publications {
     scroll-margin-top: 0;
     padding-bottom: 1rem;
-    margin-top: 30px;
-    /* Further reduced bottom size to hide black box */
+    position: relative;
+    background-color: transparent !important; /* Override .sec-dark */
+    z-index: 1;
+}
+
+#publications::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    background-color: rgba(0, 0, 0, 0.85); /* Black background */
+    z-index: -1;
 }
 
 #conferences {
@@ -534,7 +546,7 @@ p {
 /* Grid for Research */
 #research .container {
     position: relative;
-    top: -45px;
+    top: -15px;
 }
 
 .grid-container {
