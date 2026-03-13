@@ -638,6 +638,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .sticky-wrap {
+        height: 120vh; /* Shorter scroll for mobile */
+    }
+
     .bio-card {
         flex-direction: column;
         text-align: center;

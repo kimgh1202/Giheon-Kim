@@ -32,10 +32,15 @@ function updateScrollAnim() {
     // Zoom Logic
     const title = document.getElementById('zoom-title');
     if (title) {
-        if (scrollY < window.innerHeight * 2.7) { // Adjusted for 250vh sticky-wrap
-            // Balanced zooming and fade out
-            const zoomFactor = 1 + (scrollY / 500); 
-            const opacityFactor = 1 - (scrollY / (window.innerHeight * 1.2)); 
+        const isMobile = window.innerWidth <= 768;
+        const scrollLimit = isMobile ? window.innerHeight * 1.2 : window.innerHeight * 2.7;
+        const zoomDivisor = isMobile ? 300 : 500;
+        const opacityDivisor = isMobile ? window.innerHeight * 0.6 : window.innerHeight * 1.2;
+
+        if (scrollY < scrollLimit) { 
+            // Balanced zooming and fade out based on device
+            const zoomFactor = 1 + (scrollY / zoomDivisor); 
+            const opacityFactor = 1 - (scrollY / opacityDivisor); 
             
             // translateZ(0) forces GPU hardware acceleration for buttery smoothness
             title.style.transform = `scale(${zoomFactor}) translateZ(0)`;
