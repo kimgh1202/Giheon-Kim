@@ -302,7 +302,11 @@ p {
 }
 
 #about {
-    scroll-margin-top: calc(25vh + 60px); /* Adjusted to move the box another 10px up */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    scroll-margin-top: 0;
 }
 
 #publications {
