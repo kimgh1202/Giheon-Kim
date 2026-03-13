@@ -363,18 +363,20 @@ p {
     scroll-margin-top: 0;
     padding-bottom: 1rem;
     position: relative;
-    background-color: transparent !important; /* Override .sec-dark */
+    background-color: transparent !important;
+    /* Override .sec-dark */
     z-index: 1;
 }
 
 #publications::before {
     content: '';
     position: absolute;
-    top: 105px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: -30px;
-    background-color: rgba(0, 0, 0, 0.85); /* Black background */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 150px, rgba(0, 0, 0, 0.85) 100%);
+    /* Smooth gradient transition to black */
     z-index: -1;
 }
 
