@@ -1,11 +1,19 @@
 // Prevent browser from restoring scroll position on reload
-if (history.scrollRestoration) {
+if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-window.onbeforeunload = function () {
+// Ensure the page always loads at the top, overriding browser behavior
+window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
-}
+});
+
+// Double check forced scroll on load to fix Safari/Chrome quirks
+window.onload = function() {
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 10);
+};
 
 // Scroll Reveal Animation Functionality
 function reveal() {
