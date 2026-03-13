@@ -370,7 +370,7 @@ p {
 #publications::before {
     content: '';
     position: absolute;
-    top: 30px;
+    top: 75px;
     left: 0;
     right: 0;
     bottom: -30px;
