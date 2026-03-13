@@ -298,6 +298,11 @@ p {
 
 .section {
     padding: 8rem 0;
+    scroll-margin-top: 100px; /* Offset for navbar */
+}
+
+#about {
+    scroll-margin-top: 15vh; /* Larger offset to center the bio card on scroll */
 }
 
 .sec-light {
