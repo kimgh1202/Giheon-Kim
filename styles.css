@@ -349,8 +349,19 @@ p {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     padding: 0.5rem 0;
-    margin-top: 0.5rem;
+    margin-top: 15px; /* Use explicit 15px gap */
     z-index: 100;
+}
+
+/* Invisible bridge so mouse doesn't leave dropdown area */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: transparent;
 }
 
 .dropdown:hover .dropdown-menu {
