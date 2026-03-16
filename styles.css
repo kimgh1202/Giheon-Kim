@@ -327,6 +327,65 @@ p {
     }
 }
 
+/* Dropdown Navigation */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    flex-direction: column;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    display: block !important;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-primary-light);
+    border-radius: 0 !important;
+    text-align: center;
+}
+
+.dropdown-menu a::before,
+.dropdown-menu a::after {
+    display: none; /* Hide parent hover effects for dropdown items */
+}
+
+.dropdown-menu a:hover {
+    background: rgba(0, 102, 204, 0.05); /* Very subtle blue highlight */
+    color: var(--accent-blue);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
 /* Sections & Containers */
 .container {
     max-width: 1000px;
@@ -484,7 +543,6 @@ p {
     gap: 3rem;
     text-align: left;
     max-width: 800px;
-    min-height: 300px; /* Force minimum height to make the card taller */
     margin: 0 auto;
 }
 
