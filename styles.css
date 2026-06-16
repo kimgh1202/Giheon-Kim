@@ -612,6 +612,38 @@ p {
     opacity: 1;
 }
 
+.name-link-white {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.name-link-white::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 2px;
+    left: 0;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.name-link-white:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.name-link-white:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 /* Buttons */
 .btn-primary {
     display: inline-block;
