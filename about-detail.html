@@ -19,58 +19,49 @@
 
     <nav id="navbar" class="glass-nav">
         <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <a href="index.html#about" onclick="if(document.referrer.includes(window.location.hostname)){ history.back(); return false; }" class="logo" style="display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.5em; line-height: 1;">&larr;</span> Home</a>
+            <a href="index.html#about" class="logo" style="display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.5em; line-height: 1;">&larr;</span> Home</a>
         </div>
     </nav>
 
     <main style="padding-top: 100px;">
         <section class="section bio-section text-center">
             <div class="container reveal">
-                <div class="profile-placeholder" style="margin: 0 auto 2rem auto; width: 180px; height: 180px;"></div>
                 <h1 class="hero-title" style="transform: scale(1); opacity: 1; margin-bottom: 1rem;">Giheon Kim</h1>
-                <p class="hero-subtitle">M.S. / Ph.D. Candidate in Computer Science</p>
-                <p style="max-width: 600px; margin: 0 auto 4rem auto;">Scroll down to explore my academic and professional journey.</p>
+                <p class="hero-subtitle">Ph.D. Candidate in Electronic and Electrical Engineering</p>
+                <p class="bio-affiliation">Kyungpook National University</p>
             </div>
         </section>
 
         <!-- Interactive Vertical Timeline -->
-        <section class="section" style="padding-top: 0;">
+        <section class="section education-section" style="padding-top: 0;" aria-labelledby="education-title">
             <div class="container">
+                <h2 id="education-title" class="section-title">Education</h2>
                 <div class="timeline interactive-timeline">
                     
                     <div class="timeline-item reveal">
                         <div class="timeline-dot interactive-dot"></div>
                         <div class="timeline-content glass-card hover-lift">
-                            <h3 class="gradient-text" style="display: inline-block;">Ph.D. in Computer Science</h3>
-                            <p class="date">Expected 2029 | [University Name]</p>
-                            <p>Currently researching Agentic AI and Human-Computer Interaction.</p>
+                            <h3 class="gradient-text" style="display: inline-block;">Ph.D. in Electronic and Electrical Engineering</h3>
+                            <p class="date">Sep. 2025 &ndash; Present</p>
+                            <p>Kyungpook National University</p>
                         </div>
                     </div>
 
                     <div class="timeline-item reveal">
                         <div class="timeline-dot interactive-dot"></div>
                         <div class="timeline-content glass-card hover-lift">
-                            <h3 class="gradient-text" style="display: inline-block;">M.S. in Computer Science</h3>
-                            <p class="date">2024 - 2026 | [University Name]</p>
-                            <p>Thesis on "Adaptive User Interfaces leveraging LLMs". Developed novel interaction techniques for multimodal environments.</p>
+                            <h3 class="gradient-text" style="display: inline-block;">M.S. in Biomedical Engineering</h3>
+                            <p class="date">Sep. 2021 &ndash; Feb. 2025</p>
+                            <p>Korea University</p>
                         </div>
                     </div>
 
                     <div class="timeline-item reveal">
                         <div class="timeline-dot interactive-dot"></div>
                         <div class="timeline-content glass-card hover-lift">
-                            <h3 class="gradient-text" style="display: inline-block;">Research Intern</h3>
-                            <p class="date">Summer 2025 | [Company/Lab Name]</p>
-                            <p>Prototyped next-generation ubiquitous computing interfaces and conducted large-scale user studies.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot interactive-dot"></div>
-                        <div class="timeline-content glass-card hover-lift">
-                            <h3 class="gradient-text" style="display: inline-block;">B.S. in Computer Science</h3>
-                            <p class="date">2019 - 2024 | [University Name]</p>
-                            <p>Graduated with Honors. Capstone project focused on accessibility in smart home environments.</p>
+                            <h3 class="gradient-text" style="display: inline-block;">B.S. in Biomedical Engineering</h3>
+                            <p class="date">Mar. 2014 &ndash; Feb. 2019</p>
+                            <p>Ulsan National Institute of Science and Technology (UNIST)</p>
                         </div>
                     </div>
 

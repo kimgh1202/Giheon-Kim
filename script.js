@@ -1,23 +1,98 @@
-// Prevent browser from restoring scroll position on reload
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
+function initializeNavigation() {
+    // Keep native anchor navigation and browser scroll restoration intact.
+    const navigation = document.getElementById('navbar');
+    const navigationContent = navigation?.querySelector('.nav-content');
+
+    if (navigationContent) {
+        navigation.setAttribute('aria-label', 'Primary navigation');
+        let navigationLinks = navigation.querySelector('.nav-links');
+
+        // Detail pages retain their Home link on desktop and gain a mobile menu.
+        if (!navigationLinks) {
+            navigationLinks = document.createElement('ul');
+            navigationLinks.className = 'nav-links subpage-nav';
+            navigationLinks.innerHTML = `
+                <li><a href="index.html#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html#about">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-detail.html">Biography &amp; education</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#research">Research Areas</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="research-flexible-electronics.html">Flexible electronics</a></li>
+                        <li><a href="research-neural-interfaces.html">Neural interfaces</a></li>
+                        <li><a href="research-organoid-intelligence.html">Organoid intelligence</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#publications">Publications</a></li>
+                <li><a href="https://sites.google.com/view/knunblab/" target="_blank" rel="noopener noreferrer">Advisor</a></li>`;
+            navigationContent.append(navigationLinks);
+        }
+
+        navigationLinks.id = 'primary-navigation';
+        const menuToggle = document.createElement('button');
+        menuToggle.type = 'button';
+        menuToggle.className = 'menu-toggle';
+        menuToggle.setAttribute('aria-controls', navigationLinks.id);
+        menuToggle.innerHTML = '<span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"><span></span><span></span></span>';
+        navigationContent.insertBefore(menuToggle, navigationLinks);
+
+        const mobileNavigation = window.matchMedia('(max-width: 768px)');
+        const setMenuOpen = (open, restoreFocus = false) => {
+            const expanded = open && mobileNavigation.matches;
+            navigation.classList.toggle('nav-open', expanded);
+            menuToggle.setAttribute('aria-expanded', String(expanded));
+            menuToggle.setAttribute('aria-label', expanded ? 'Close navigation menu' : 'Open navigation menu');
+            menuToggle.querySelector('.menu-label').textContent = expanded ? 'Close' : 'Menu';
+            if (restoreFocus) menuToggle.focus();
+        };
+        setMenuOpen(false);
+
+        menuToggle.addEventListener('click', () => {
+            setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+        });
+
+        navigation.addEventListener('click', (event) => {
+            const link = event.target.closest('a');
+            if (!link || !mobileNavigation.matches) return;
+
+            // Move keyboard focus to the section when its menu link disappears.
+            const href = link.getAttribute('href');
+            if (href?.startsWith('#')) {
+                const section = document.getElementById(href.slice(1));
+                if (section) {
+                    section.setAttribute('tabindex', '-1');
+                    section.focus({ preventScroll: true });
+                }
+            }
+            setMenuOpen(false);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navigation.classList.contains('nav-open')) {
+                setMenuOpen(false, true);
+            }
+        });
+        document.addEventListener('click', (event) => {
+            if (!navigation.contains(event.target)) setMenuOpen(false);
+        });
+        navigation.addEventListener('focusout', (event) => {
+            if (!navigation.contains(event.relatedTarget)) setMenuOpen(false);
+        });
+        mobileNavigation.addEventListener('change', () => {
+            // Do not leave focus inside a menu that becomes hidden on resize.
+            const focusMovesToToggle = mobileNavigation.matches && navigationLinks.contains(document.activeElement);
+            setMenuOpen(false, focusMovesToToggle);
+        });
+        window.addEventListener('pageshow', () => setMenuOpen(false));
+    }
+
 }
 
-// Immediate scroll to top
-window.scrollTo(0, 0);
-
-// Ensure the page always loads at the top, overriding browser behavior
-window.addEventListener('beforeunload', function() {
-    window.scrollTo(0, 0);
-});
-
-// Double check forced scroll on load to fix Safari/Chrome quirks
-window.onload = function() {
-    window.scrollTo(0, 0);
-    setTimeout(function() {
-        window.scrollTo(0, 0);
-    }, 150);
-};
+initializeNavigation();
 
 // Scroll Reveal Animation Functionality
 function reveal() {
@@ -110,6 +185,16 @@ window.addEventListener('scroll', () => {
 });
 
 window.addEventListener('scroll', reveal);
+window.addEventListener('resize', reveal);
+// Hash links may settle after initial script execution or history navigation.
+window.addEventListener('load', () => {
+    reveal();
+    window.dispatchEvent(new Event('scroll'));
+});
+window.addEventListener('pageshow', () => {
+    reveal();
+    window.dispatchEvent(new Event('scroll'));
+});
 // Trigger initializations on load
 reveal();
 // Trigger a scroll event on load to set initial states correctly

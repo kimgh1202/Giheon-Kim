@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Portfolio</title>
+    <title>Giheon Kim | Research Portfolio</title>
     <!-- Modern typography reminiscent of Apple design (San Francisco-like) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,15 +20,15 @@
         <div class="blob blob-3"></div>
     </div>
 
-    <nav id="navbar" class="glass-nav">
+    <nav id="navbar" class="glass-nav" aria-label="Primary navigation">
         <div class="nav-content">
-            <a href="#" class="logo">Giheon Kim</a>
-            <ul class="nav-links">
+            <a href="#home" class="logo">Giheon Kim</a>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="#home">Home</a></li>
                 <li class="dropdown">
                     <a href="#about">About</a>
                     <ul class="dropdown-menu">
-                        <li><a href="about-detail.html">Giheon Kim</a></li>
+                        <li><a href="about-detail.html">Biography &amp; education</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -40,7 +40,6 @@
                     </ul>
                 </li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#conferences">Conferences</a></li>
                 <li><a href="https://sites.google.com/view/knunblab/" target="_blank" rel="noopener noreferrer">Advisor
                         <span style="font-size: 0.8em;">&#8595;</span></a></li>
             </ul>
@@ -59,10 +58,10 @@
         <section id="about" class="section sec-light bio-section">
             <div class="container reveal">
                 <div class="bio-card glass-card">
-                    <div class="profile-placeholder"></div>
                     <div class="bio-text">
                         <h2>Hello, I am <a href="about-detail.html" class="name-link">Giheon Kim<span class="click-arrow">&nearr;</span></a>.</h2>
-                        <p>I researched to developing next-generation <span style="color: rgb(0, 102, 204); font-weight: 600;">bioelectric interfaces</span> that bridge the gap between the <span style="color: rgb(255, 100, 150); font-weight: 600;">brain</span> and <span style="color: rgb(150, 100, 255); font-weight: 600;">machines</span>.</p>
+                        <p class="bio-affiliation">Ph.D. candidate at Kyungpook National University</p>
+                        <p>I develop <span style="color: rgb(0, 102, 204); font-weight: 600;">bioelectronic interfaces</span> for neural recording, stimulation, and multimodal sensing.</p>
                     </div>
                 </div>
             </div>
@@ -136,14 +135,6 @@
             </div>
         </section>
 
-        <section id="conferences" class="section sec-light">
-            <div class="container reveal">
-                <h2 class="section-title">Conferences & Talks</h2>
-                <div class="timeline" style="text-align: center; color: var(--text-secondary); margin-top: 2rem;">
-                    <p>List will be updated soon.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
